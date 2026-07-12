@@ -1,33 +1,37 @@
 # AI Finance Tracker 💰🤖
 
-AI-powered personal finance management web application.
+AI-powered personal finance management web application that helps users track income, expenses, savings and manage money smarter.
 
-## Features
+## 🚀 Live Demo
 
-- Income & Expense Tracking
-- AI Financial Insights
-- AI Chat Assistant
-- Expense Analysis
-- Budget Tracking
-- Charts & Analytics
-- PDF Report Export
-- CSV Export
-- Dark Mode
-- Responsive Design
+https://manamvinay24-cell.github.io/AI-Finance-Tracker/
 
-## Technologies Used
+## ✨ Features
 
-- HTML
-- CSS
+- 💵 Income & Expense Tracking
+- 📊 Financial Analytics Dashboard
+- 🤖 AI Financial Insights
+- 💬 AI Finance Assistant Chat
+- 📈 Expense Analysis
+- 🎯 Monthly Budget Tracking
+- 🔮 Saving Prediction
+- 📄 PDF Financial Report Export
+- 📑 CSV Data Export
+- 🌙 Dark Mode
+- ⚡ Premium Loading Animation
+- 📱 Responsive Design
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
 - JavaScript
 - Chart.js
 - jsPDF
+- GitHub Pages
 
-## How to Run
+## 📸 Project Overview
 
-1. Clone this repository
-2. Open index.html in your browser
+AI Finance Tracker provides a simple and intelligent way to manage personal finances with interactive charts and AI-based suggestions.
 
-## Author
-
-Manam Naga Vinay
+## 📂 Project Structure
