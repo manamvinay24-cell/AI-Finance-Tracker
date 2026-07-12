@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Finance Tracker</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+<!-- ================= PREMIUM NAVBAR ================= -->
+
+
+<nav class="navbar">
+
+
+    <div class="brand">
+
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-wallet"></i>
+
+        </div>
+
+
+        <div>
+
+
+            <h2>
+
+                AI Finance Tracker
+
+            </h2>
+
+
+            <span>
+
+                Smart Money AI
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="nav-actions">
+
+
+        <span class="pro-badge">
+
+            PRO
+
+        </span>
+
+
+        <button id="themeBtn">
+
+
+            <i class="fa-solid fa-moon"></i>
+
+
+        </button>
+
+
+        <button>
+
+
+            <i class="fa-solid fa-user"></i>
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+</nav>
+<!-- ========================= -->
+<!-- HERO SECTION -->
+<!-- ========================= -->
+
+<section class="hero">
+
+    <h1>Manage Your Money Smartly</h1>
+
+    <p>
+
+        Track income, expenses, savings and receive AI powered financial insights.
+
+    </p>
+
+</section>
+
+<!-- ========================= -->
+<!-- DASHBOARD -->
+<!-- ========================= -->
+<!-- ================= WELCOME SECTION ================= -->
+
+
+<section class="welcome-box">
+
+
+    <h1>
+
+        Welcome Back 👋
+
+    </h1>
+
+
+    <h2>
+
+        AI Finance Tracker
+
+    </h2>
+
+
+    <p>
+
+        Manage your money smarter with AI insights.
+
+    </p>
+
+
+
+    <div class="date-time">
+
+
+        <span id="currentDate">
+
+            📅 Loading Date...
+
+        </span>
+
+
+        <span id="currentTime">
+
+            ⏰ Loading Time...
+
+        </span>
+
+
+    </div>
+
+
+
+</section>
+<section class="dashboard">
+
+    <!-- Balance -->
+
+    <div class="card balance-card">
+
+        <h3>Total Balance</h3>
+
+        <h1 id="balance">₹0</h1>
+
+    </div>
+
+    <!-- Income -->
+
+    <div class="card income-card">
+
+        <h3>Total Income</h3>
+
+        <h2 id="income">₹0</h2>
+
+    </div>
+
+    <!-- Expense -->
+
+    <div class="card expense-card">
+
+        <h3>Total Expense</h3>
+
+        <h2 id="expense">₹0</h2>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- MONTHLY BUDGET -->
+<!-- ========================= -->
+
+<section class="budget-section">
+
+    <div class="card budget-card">
+
+        <h2>Monthly Budget</h2>
+
+        <h3 id="budgetAmount">₹20,000</h3>
+
+        <progress
+            id="budgetProgress"
+            value="0"
+            max="100">
+        </progress>
+
+        <p id="budgetText">
+
+            0% Used
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ADD TRANSACTION -->
+<!-- ========================= -->
+
+<section class="transaction-box">
+
+    <h2>Add Transaction</h2>
+
+    <form id="transactionForm">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Transaction Title"
+            required>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            required>
+
+        <select id="type">
+
+            <option value="income">
+                Income
+            </option>
+
+            <option value="expense">
+                Expense
+            </option>
+
+        </select>
+
+        <select id="category">
+
+            <option>Salary</option>
+
+            <option>Food</option>
+
+            <option>Shopping</option>
+
+            <option>Travel</option>
+
+            <option>Bills</option>
+
+            <option>Health</option>
+
+            <option>Entertainment</option>
+
+            <option>Investment</option>
+
+            <option>Other</option>
+
+        </select>
+
+        <input
+            type="date"
+            id="date"
+            required>
+
+        <button type="submit">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Transaction
+
+        </button>
+
+    </form>
+
+    <div class="export-buttons">
+
+        <button
+            type="button"
+            onclick="exportCSV()">
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            Export CSV
+
+        </button>
+
+        <button
+            type="button"
+            onclick="exportPDF()">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            Export PDF
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- SEARCH -->
+<!-- ========================= -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search Transaction">
+
+</section>
+
+<!-- ========================= -->
+<!-- FILTER -->
+<!-- ========================= -->
+
+<section class="filter-section">
+
+    <select id="filter">
+
+        <option value="all">All Transactions</option>
+
+        <option value="income">Income</option>
+
+        <option value="expense">Expense</option>
+
+    </select>
+
+</section>
+
+<!-- ========================= -->
+<!-- TRANSACTION HISTORY -->
+<!-- ========================= -->
+
+<section class="history">
+
+    <div class="history-header">
+
+        <h2>
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Transaction History
+
+        </h2>
+
+    </div>
+
+    <ul id="transactionList">
+
+        <!-- Transactions will be added by JavaScript -->
+
+    </ul>
+
+</section>
+
+<!-- ========================= -->
+<!-- ANALYTICS -->
+<!-- ========================= -->
+
+<section class="analytics">
+
+    <div class="chart-card">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            Income vs Expense
+
+        </h2>
+
+        <canvas id="pieChart"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            Monthly Analytics
+
+        </h2>
+
+        <canvas id="barChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CATEGORY ANALYTICS -->
+<!-- ========================= -->
+
+<section class="category-box">
+
+    <h2>
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        Category Analytics
+
+    </h2>
+
+    <div id="categoryAnalytics">
+
+        <!-- JavaScript will generate category summary -->
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- AI INSIGHTS -->
+<!-- ========================= -->
+
+<section class="ai-box">
+
+    <div class="ai-title">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h2>AI Financial Insights</h2>
+
+    </div>
+
+
+    <div id="aiMessage">
+
+        🤖 Analyzing your financial data...
+
+    </div>
+
+</section>
+<!-- ================= AI REPORT ================= -->
+
+
+<section class="report-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        AI Monthly Report
+
+    </h2>
+
+
+
+    <button id="generateReport">
+
+
+        Generate AI Report
+
+
+    </button>
+
+
+
+    <div id="reportResult">
+
+
+        Click generate to analyze your finances.
+
+
+    </div>
+
+
+
+</section>
+<!-- ================= FUTURE PREDICTION ================= -->
+
+
+<section class="prediction-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        AI Future Prediction
+
+    </h2>
+
+
+
+    <button id="predictBtn">
+
+
+        Predict Next Month
+
+
+    </button>
+
+
+
+    <div id="predictionResult">
+
+
+        Click predict to forecast your finances.
+
+
+    </div>
+
+
+
+</section>
+<!-- ================= AI EXPENSE ADVICE ================= -->
+
+
+<section class="expense-ai-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        AI Expense Advice
+
+    </h2>
+
+
+
+    <button id="expenseAdviceBtn">
+
+
+        Analyze Expenses
+
+
+    </button>
+
+
+
+    <div id="expenseAdvice">
+
+
+        Click analyze to get AI suggestions.
+
+
+    </div>
+
+
+
+</section>
+<!-- ================= FINANCIAL HEALTH SCORE ================= -->
+
+<section class="health-box">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Financial Health Score
+    
+    </h2>
+
+
+    <div class="score-circle">
+
+        <span id="healthScore">
+            0
+        </span>
+
+        <small>
+            /100
+        </small>
+
+    </div>
+
+
+    <p id="healthMessage">
+
+        Add transactions to calculate your score.
+
+    </p>
+
+
+</section>
+<!-- ================= SAVING PREDICTION ================= -->
+
+<section class="saving-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-piggy-bank"></i>
+
+        AI Saving Prediction
+
+    </h2>
+
+
+
+    <div id="savingPrediction">
+
+        Add transactions to predict your savings.
+
+    </div>
+    
+</section>
+<!-- ================= EXPENSE ANALYZER ================= -->
+
+<section class="expense-ai-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+        AI Expense Analyzer
+<!-- ================= SPENDING SCORE ================= -->
+
+<section class="spending-box">
+
+
+    <h2>
+
+        <i class="fa-solid fa-gauge-high"></i>
+
+        AI Spending Score
+
+    </h2>
+
+
+
+    <div class="spending-circle">
+
+
+        <span id="spendingScore">
+
+            0
+
+        </span>
+
+
+        <small>
+
+            /100
+
+        </small>
+
+
+    </div>
+
+
+
+    <p id="spendingMessage">
+
+        Add transactions to calculate your spending score.
+
+    </p>
+
+
+
+</section>
+    </h2>
+
+
+
+    <div id="expenseAnalysis">
+
+        Add expenses to analyze your spending.
+
+    </div>
+
+
+
+</section>
+<!-- ================= AI CHAT ================= -->
+
+<section class="ai-chat-box">
+
+    <div class="ai-chat-header">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h2>AI Finance Assistant</h2>
+
+    </div>
+
+
+    <div id="chatMessages">
+
+        <div class="ai-message">
+
+            🤖 Hello! Ask me anything about your money.
+
+        </div>
+
+    </div>
+
+
+    <div class="chat-input">
+
+
+        <input 
+        type="text"
+        id="userQuestion"
+        placeholder="Ask your financial question...">
+
+
+        <button id="askAI">
+
+            send
+
+        </button>
+<button id="clearChat">
+
+    Clear
+
+</button>
+
+    </div>
+
+
+</section>
+<!-- ========================= -->
+<!-- LOADING OVERLAY -->
+<!-- ========================= -->
+
+<!-- ================= AI LOADING SCREEN ================= -->
+
+<div id="loadingScreen" class="loading-screen">
+
+
+    <div class="ai-loader">
+
+
+        <i class="fa-solid fa-robot"></i>
+
+
+    </div>
+
+
+
+    <h2>
+
+        Loading AI Finance Tracker...
+
+    </h2>
+
+
+
+    <p id="loadingText">
+
+        Analyzing your financial data...
+
+    </p>
+
+
+
+    <div class="loading-bar">
+
+
+        <div class="loading-progress"></div>
+
+
+    </div>
+
+
+
+</div>
+<!-- ========================= -->
+<!-- TOAST NOTIFICATION -->
+<!-- ========================= -->
+
+<div id="toast"></div>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 AI Finance Tracker
+
+    </p>
+
+    <p>
+
+        Developed by <strong>Manam Vinay</strong>
+
+    </p>
+
+</footer>
+
+<!-- ========================= -->
+<!-- CHART.JS -->
+<!-- ========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ========================= -->
+<!-- JSPDF -->
+<!-- ========================= -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,3586 @@
+/* =======================================
+   GOOGLE FONT
+======================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =======================================
+   RESET
+======================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =======================================
+   BODY
+======================================= */
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.65)
+    ),
+    url("Premium_wooden_website_background_202607122037.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+}
+body{
+
+
+    animation:
+
+    backgroundMove 15s infinite alternate;
+
+
+}
+
+
+
+@keyframes backgroundMove{
+
+
+    from{
+
+        background-position:center;
+
+    }
+
+
+    to{
+
+        background-position:top right;
+
+    }
+
+
+}
+
+/* =======================================
+   ANIMATED BACKGROUND
+======================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
+
+    animation:moveGlow 12s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes moveGlow{
+
+    0%{
+
+        transform:translate(-10%,-10%) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(10%,10%) scale(1.2);
+
+    }
+
+    100%{
+
+        transform:translate(-10%,-10%) scale(1);
+
+    }
+
+}
+
+/* =======================================
+   NAVBAR
+======================================= */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.08);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+    z-index:1000;
+
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo h2{
+    font-size:24px;
+    color:white;
+}
+
+.logo i{
+
+    color:#00e5ff;
+
+    font-size:32px;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+/* =======================================
+   THEME BUTTON
+======================================= */
+
+#themeBtn{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.4s;
+
+}
+
+#themeBtn:hover{
+
+    transform:rotate(180deg) scale(1.1);
+
+    background:#00e5ff;
+
+    color:#111;
+
+}
+
+/* =======================================
+   HERO SECTION
+======================================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:90px 20px;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:800;
+
+    text-shadow:0 0 20px rgba(0,0,0,.6);
+
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    color:#e6e6e6;
+
+    max-width:700px;
+
+    margin-inline:auto;
+
+    line-height:1.8;
+
+}
+
+/* =======================================
+   HERO ANIMATION
+======================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================================
+   GLASS CARD
+======================================= */
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.5);
+
+}
+/* =======================================
+   DASHBOARD
+======================================= */
+
+.dashboard{
+
+    width:90%;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.dashboard .card{
+
+    padding:30px;
+
+    text-align:center;
+
+    animation:cardPop .8s ease;
+
+}
+
+.dashboard h3{
+
+    font-size:18px;
+
+    color:#ddd;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#00ffd5;
+
+}
+
+.dashboard h2{
+
+    font-size:34px;
+
+    font-weight:600;
+
+}
+
+/* =======================================
+   CARD COLORS
+======================================= */
+
+.balance-card{
+
+    border-left:6px solid #00e5ff;
+
+}
+
+.income-card{
+
+    border-left:6px solid #00ff88;
+
+}
+
+.expense-card{
+
+    border-left:6px solid #ff4d6d;
+
+}
+
+/* =======================================
+   BUDGET SECTION
+======================================= */
+
+.budget-section{
+
+    width:90%;
+
+    margin:20px auto 50px;
+
+}
+
+.budget-card{
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.budget-card h2{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.budget-card h3{
+
+    font-size:36px;
+
+    color:#00ffd5;
+
+    margin-bottom:20px;
+
+}
+
+#budgetProgress{
+
+    width:100%;
+
+    height:20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#budgetProgress::-webkit-progress-bar{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+}
+
+#budgetProgress::-webkit-progress-value{
+
+    background:linear-gradient(90deg,#00e5ff,#00ff88);
+
+    border-radius:20px;
+
+}
+
+#budgetText{
+
+    margin-top:15px;
+
+    font-size:17px;
+
+    color:#f5f5f5;
+
+}
+
+/* =======================================
+   HOVER EFFECT
+======================================= */
+
+.balance-card:hover{
+
+    border-left-color:#00ffff;
+
+}
+
+.income-card:hover{
+
+    border-left-color:#00ff88;
+
+}
+
+.expense-card:hover{
+
+    border-left-color:#ff1744;
+
+}
+
+.budget-card:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+}
+
+/* =======================================
+   CARD ANIMATION
+======================================= */
+
+@keyframes cardPop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+
+@media(max-width:768px){
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .dashboard h1{
+
+        font-size:34px;
+
+    }
+
+    .dashboard h2{
+
+        font-size:28px;
+
+    }
+
+}
+/* =======================================
+   TRANSACTION SECTION
+======================================= */
+
+.transaction-box{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.transaction-box h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:30px;
+
+}
+
+/* =======================================
+   FORM
+======================================= */
+
+#transactionForm{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+#transactionForm input,
+#transactionForm select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+#transactionForm input::placeholder{
+
+    color:#ddd;
+
+}
+
+#transactionForm input:focus,
+#transactionForm select:focus{
+
+    border:2px solid #00e5ff;
+
+    transform:scale(1.02);
+
+}
+
+/* Dropdown options */
+
+#transactionForm select option{
+
+    background:#1b1b1b;
+
+    color:#fff;
+
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+
+#transactionForm button{
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#00e5ff,#00ff88);
+
+    color:#111;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#transactionForm button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 25px rgba(0,229,255,.35);
+
+}
+
+/* =======================================
+   EXPORT BUTTONS
+======================================= */
+
+.export-buttons{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.export-buttons button{
+
+    padding:14px 24px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.export-buttons button:hover{
+
+    background:#00e5ff;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+/* =======================================
+   SEARCH
+======================================= */
+
+.search-section{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:40px auto 20px;
+
+}
+
+#search{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+#search::placeholder{
+
+    color:#ddd;
+
+}
+
+/* =======================================
+   FILTER
+======================================= */
+
+.filter-section{
+
+    width:90%;
+
+    max-width:250px;
+
+    margin:0 auto 40px;
+
+}
+
+#filter{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    cursor:pointer;
+
+}
+
+#filter option{
+
+    background:#1b1b1b;
+
+    color:#fff;
+
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media(max-width:768px){
+
+    .transaction-box{
+
+        padding:25px;
+
+    }
+
+    #transactionForm{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .export-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
+/* =======================================
+   TRANSACTION HISTORY
+======================================= */
+
+.history{
+
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+
+}
+
+.history-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+
+}
+
+.history-header h2{
+
+    font-size:28px;
+
+}
+
+#transactionList{
+
+    list-style:none;
+
+}
+
+#transactionList li{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-left:6px solid transparent;
+
+    transition:.35s;
+
+}
+
+#transactionList li:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+#transactionList li.income{
+
+    border-left-color:#00ff88;
+
+}
+
+#transactionList li.expense{
+
+    border-left-color:#ff4d6d;
+
+}
+
+#transactionList button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+#transactionList button:hover{
+
+    background:#ff1744;
+
+    transform:scale(1.05);
+
+}
+
+/* =======================================
+   ANALYTICS
+======================================= */
+
+.analytics{
+
+    width:90%;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+
+    gap:30px;
+
+}
+
+.chart-card{
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+}
+
+.chart-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    max-height:350px;
+
+}
+
+/* =======================================
+   CATEGORY BOX
+======================================= */
+
+.category-box{
+
+    width:90%;
+
+    margin:50px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.category-box h2{
+
+    margin-bottom:20px;
+
+}
+
+#categoryAnalytics{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+}
+
+/* =======================================
+   AI BOX
+======================================= */
+
+.ai-box{
+
+    width:90%;
+
+    margin:50px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(0,229,255,.12);
+
+    border:1px solid rgba(0,229,255,.3);
+
+    text-align:center;
+
+}
+
+.ai-box h2{
+
+    margin-bottom:15px;
+
+}
+
+#aiMessage{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* =======================================
+   TOAST
+======================================= */
+
+#toast{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    background:#00e5ff;
+
+    color:#111;
+
+    padding:16px 24px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+    z-index:9999;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+}
+
+/* =======================================
+   LOADING SCREEN
+======================================= */
+/* =======================================
+   LOADING SCREEN
+======================================= */
+
+/* =======================================
+   PREMIUM LOADING SCREEN
+======================================= */
+
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.80)
+    ),
+
+    url("Premium_wooden_website_background_202607122037.jpeg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    animation:loadingZoom 5s infinite alternate;
+
+}
+
+
+
+.loading-screen h2{
+
+    color:white;
+
+    font-size:35px;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+    0 0 20px #00e5ff;
+
+}
+
+
+
+/* Circle Loader */
+
+.loader{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+
+    border:
+
+    8px solid rgba(255,255,255,.2);
+
+
+    border-top:
+
+    8px solid #00e5ff;
+
+
+    animation:
+
+    spin 1s linear infinite;
+
+
+}
+
+
+
+@keyframes spin{
+
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+@keyframes loadingZoom{
+
+
+    from{
+
+        background-size:100%;
+
+    }
+
+
+    to{
+
+        background-size:110%;
+
+    }
+
+}
+/* =======================================
+   FOOTER
+======================================= */
+
+footer{
+
+    margin-top:80px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+}
+
+footer p{
+
+    margin:8px 0;
+
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+
+@media(max-width:768px){
+
+    .analytics{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .history-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    #transactionList li{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+}
+/* =======================================
+   LOGO ANIMATION
+======================================= */
+
+.logo i{
+
+    animation: walletMove 2s infinite alternate;
+
+}
+
+
+@keyframes walletMove{
+
+    from{
+
+        transform:translateY(0px);
+
+    }
+
+
+    to{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+
+
+.logo h2{
+
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #00ff88,
+        #ffffff
+    );
+
+
+    background-size:200%;
+
+
+    -webkit-background-clip:text;
+
+
+    color:transparent;
+
+
+    animation:textGlow 3s infinite;
+
+}
+
+
+
+@keyframes textGlow{
+
+    0%{
+
+        background-position:0%;
+
+    }
+
+
+    50%{
+
+        background-position:100%;
+
+    }
+
+
+    100%{
+
+        background-position:0%;
+
+    }
+
+}
+/* =======================================
+   DASHBOARD CARD PREMIUM EFFECT
+======================================= */
+
+
+.dashboard .card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:cardEnter 1s ease;
+
+}
+
+
+/* Card Light Effect */
+
+.dashboard .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    background:rgba(255,255,255,0.15);
+
+    border-radius:50%;
+
+    top:-50px;
+
+    right:-50px;
+
+    transition:.5s;
+
+}
+
+
+
+/* Hover */
+
+.dashboard .card:hover::before{
+
+    transform:scale(3);
+
+}
+
+
+
+.dashboard .card:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    rotateX(5deg);
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,229,255,.25);
+
+}
+
+
+
+/* Entry Animation */
+
+@keyframes cardEnter{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Balance Glow */
+
+.balance-card h1{
+
+    animation:balanceGlow 2s infinite alternate;
+
+}
+
+
+
+@keyframes balanceGlow{
+
+
+    from{
+
+        text-shadow:0 0 5px #00e5ff;
+
+    }
+
+
+    to{
+
+        text-shadow:0 0 25px #00e5ff;
+
+    }
+
+
+}
+/* =======================================
+   TRANSACTION HISTORY PREMIUM EFFECT
+======================================= */
+
+
+#transactionList li{
+
+    animation:slideTransaction .6s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* New Transaction Animation */
+
+@keyframes slideTransaction{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+/* Income Glow */
+
+#transactionList li.income{
+
+
+    box-shadow:
+
+    0 0 20px rgba(0,255,136,.15);
+
+
+}
+
+
+
+/* Expense Glow */
+
+#transactionList li.expense{
+
+
+    box-shadow:
+
+    0 0 20px rgba(255,77,109,.15);
+
+
+}
+
+
+
+/* Hover Effect */
+
+#transactionList li:hover{
+
+
+    transform:
+
+    translateX(10px)
+
+    scale(1.02);
+
+
+}
+
+
+
+/* Delete Button */
+
+#transactionList button{
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+#transactionList button:hover{
+
+
+    box-shadow:
+
+    0 0 20px rgba(255,0,80,.5);
+
+
+}
+/* =======================================
+   CHART SECTION PREMIUM DESIGN
+======================================= */
+
+
+.analytics{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(300px,1fr)
+    );
+
+    gap:25px;
+
+}
+
+
+
+/* Chart Card */
+
+.chart-card{
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border-radius:20px;
+
+
+    padding:25px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.15);
+
+
+    animation:
+
+    chartAppear 1s ease;
+
+
+    transition:.4s;
+
+}
+
+
+
+
+/* Hover */
+
+.chart-card:hover{
+
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.03);
+
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,229,255,.25);
+
+
+}
+
+
+
+/* Heading */
+
+.chart-card h2{
+
+
+    text-align:center;
+
+
+    margin-bottom:20px;
+
+
+    color:#ffffff;
+
+
+}
+
+
+
+
+
+/* Canvas Animation */
+
+.chart-card canvas{
+
+
+    max-height:300px;
+
+
+}
+
+
+
+
+
+@keyframes chartAppear{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(50px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+/* =======================================
+   MOBILE RESPONSIVE DESIGN
+======================================= */
+
+
+@media(max-width:768px){
+
+
+    /* Navbar */
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:20px;
+
+    }
+
+
+
+    .logo h2{
+
+        font-size:20px;
+
+    }
+
+
+
+    /* Hero */
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+
+
+    /* Dashboard Cards */
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+        padding:15px;
+
+    }
+
+
+
+    .card{
+
+        width:100%;
+
+    }
+
+
+
+
+    /* Form */
+
+    #transactionForm{
+
+
+        display:flex;
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    #transactionForm input,
+
+    #transactionForm select,
+
+    #transactionForm button{
+
+
+        width:100%;
+
+    }
+
+
+
+
+
+    /* Charts */
+
+
+    .analytics{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    .chart-card{
+
+
+        padding:15px;
+
+
+    }
+
+
+
+
+    /* History */
+
+
+    .history-header{
+
+
+        flex-direction:column;
+
+        gap:15px;
+
+
+    }
+
+
+
+    #transactionList li{
+
+
+        flex-direction:column;
+
+        gap:15px;
+
+
+    }
+
+
+
+}
+/* =======================================
+   AI CHAT ANIMATION
+======================================= */
+
+
+.ai-message,
+.user-message{
+
+    animation:chatPop .4s ease;
+
+}
+
+
+
+@keyframes chatPop{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+/* AI Typing */
+
+.typing{
+
+    font-style:italic;
+
+    animation:typingGlow 1s infinite alternate;
+
+}
+
+
+
+@keyframes typingGlow{
+
+
+    from{
+
+        opacity:.5;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+#clearChat{
+
+    background:#ff4d6d;
+
+    color:white;
+
+    border:none;
+
+}
+/* =======================================
+   FINANCIAL HEALTH SCORE
+======================================= */
+
+
+.health-box{
+
+    margin:30px auto;
+
+    padding:30px;
+
+    max-width:600px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+}
+
+
+
+.health-box h2{
+
+    color:white;
+
+}
+
+
+
+.score-circle,
+.spending-circle{
+
+
+    width:160px;
+
+    height:160px;
+
+    margin:25px auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    position:relative;
+
+
+    background:
+
+    conic-gradient(
+
+        #00e5ff 0deg,
+
+        #00e5ff 0deg,
+
+        rgba(255,255,255,.15) 0deg
+
+    );
+
+
+    color:white;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+
+    animation:pulseCircle 2s infinite;
+
+
+}
+
+
+.score-circle span,
+.spending-circle span{
+
+    z-index:2;
+
+}
+
+
+.score-circle small,
+.spending-circle small{
+
+    font-size:18px;
+
+}
+
+
+@keyframes pulseCircle{
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+
+}
+/* =======================================
+   AI SAVING PREDICTION
+======================================= */
+
+
+.saving-box{
+
+
+    margin:30px auto;
+
+
+    max-width:600px;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border-radius:25px;
+
+
+    animation:saveBox 1s ease;
+
+
+}
+
+
+
+.saving-box h2{
+
+
+    color:white;
+
+
+}
+
+
+
+.saving-box i{
+
+
+    color:#00ff88;
+
+
+    font-size:35px;
+
+
+}
+
+
+
+#savingPrediction{
+
+
+    margin-top:20px;
+
+
+    padding:20px;
+
+
+    border-radius:15px;
+
+
+    background:rgba(0,0,0,.25);
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+@keyframes saveBox{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =======================================
+   AI EXPENSE ANALYZER
+======================================= */
+
+
+.expense-ai-box{
+
+
+    margin:30px auto;
+
+
+    max-width:600px;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    background:rgba(255,255,255,0.08);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border-radius:25px;
+
+
+    animation:expenseShow 1s ease;
+
+
+}
+
+
+
+.expense-ai-box h2{
+
+
+    color:white;
+
+
+}
+
+
+
+.expense-ai-box i{
+
+
+    color:#ffcc00;
+
+
+    font-size:30px;
+
+
+}
+
+
+
+#expenseAnalysis{
+
+
+    margin-top:20px;
+
+
+    padding:20px;
+
+
+    background:rgba(0,0,0,.3);
+
+
+    border-radius:15px;
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+@keyframes expenseShow{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+/* =======================================
+   AI SPENDING SCORE
+======================================= */
+
+
+.spending-box{
+
+
+    margin:30px auto;
+
+
+    max-width:600px;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    background:rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.spending-box h2{
+
+
+    color:white;
+
+
+}
+
+
+
+.spending-circle{
+
+
+    width:150px;
+
+
+    height:150px;
+
+
+    margin:25px auto;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:
+
+    conic-gradient(
+        #00ff88 0deg,
+        #00ff88 0deg,
+        #333 0deg
+    );
+
+
+    color:white;
+
+
+    font-size:35px;
+
+
+}
+
+
+
+.spending-circle small{
+
+
+    font-size:16px;
+
+
+}
+
+
+
+#spendingMessage{
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+}
+/* =======================================
+   PREMIUM AI DASHBOARD EFFECTS
+======================================= */
+
+
+/* Glass Cards */
+
+.card,
+.health-box,
+.saving-box,
+.expense-ai-box,
+.spending-box,
+.ai-box,
+.ai-chat-box,
+.chart-card{
+
+    background:rgba(255,255,255,0.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,0.35);
+
+    transition:0.4s;
+
+}
+
+
+
+/* Hover Animation */
+
+
+.card:hover,
+.health-box:hover,
+.saving-box:hover,
+.expense-ai-box:hover,
+.spending-box:hover,
+.chart-card:hover{
+
+
+    transform:translateY(-8px) scale(1.02);
+
+
+}
+
+
+
+
+/* Heading Glow */
+
+
+h1,h2{
+
+    text-shadow:
+
+    0 0 15px rgba(0,229,255,0.5);
+
+}
+
+
+
+
+/* Button Animation */
+
+
+button{
+
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+
+    transform:scale(1.05);
+
+    box-shadow:
+
+    0 0 20px #00e5ff;
+
+
+}
+
+
+
+/* Smooth Page Animation */
+
+
+section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+
+@keyframes fadeUp{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+/* =======================================
+   AI CHAT PREMIUM UI
+======================================= */
+
+
+.ai-chat-box{
+
+
+    max-width:700px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.3);
+
+
+}
+
+
+
+.ai-chat-header{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    color:white;
+
+
+}
+
+
+
+.ai-chat-header i{
+
+
+    font-size:35px;
+
+    color:#00e5ff;
+
+
+}
+
+
+
+#chatMessages{
+
+
+    height:300px;
+
+
+    overflow-y:auto;
+
+
+    margin:25px 0;
+
+
+    padding:15px;
+
+
+}
+
+
+
+.ai-message,
+.user-message{
+
+
+    max-width:75%;
+
+
+    padding:15px;
+
+
+    margin:15px 0;
+
+
+    border-radius:20px;
+
+
+    color:white;
+
+
+    animation:chatShow .4s ease;
+
+
+}
+
+
+
+.ai-message{
+
+
+    background:rgba(0,229,255,.2);
+
+
+    margin-right:auto;
+
+
+}
+
+
+
+.user-message{
+
+
+    background:rgba(0,255,136,.25);
+
+
+    margin-left:auto;
+
+
+}
+
+
+
+
+.chat-input{
+
+
+    display:flex;
+
+    gap:10px;
+
+
+}
+
+
+
+.chat-input input{
+
+
+    flex:1;
+
+
+    padding:15px;
+
+
+    border-radius:15px;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+}
+
+
+
+.chat-input button{
+
+
+    padding:15px 25px;
+
+
+    border-radius:15px;
+
+
+    border:none;
+
+
+    background:#00e5ff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+@keyframes chatShow{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+/* =======================================
+   MOBILE RESPONSIVE DESIGN
+======================================= */
+
+
+@media(max-width:768px){
+
+
+
+    /* Navbar */
+
+
+    .navbar{
+
+
+        flex-direction:column;
+
+        gap:15px;
+
+
+    }
+
+
+
+    .logo h2{
+
+
+        font-size:20px;
+
+
+    }
+
+
+
+
+    /* Hero */
+
+
+    .hero h1{
+
+
+        font-size:32px;
+
+
+    }
+
+
+
+    .hero p{
+
+
+        font-size:15px;
+
+
+        padding:0 20px;
+
+
+    }
+
+
+
+
+    /* Dashboard Cards */
+
+
+    .dashboard{
+
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding:15px;
+
+
+    }
+
+
+
+    .card{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+    /* Forms */
+
+
+    #transactionForm{
+
+
+        display:flex;
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+    #transactionForm input,
+    #transactionForm select,
+    #transactionForm button{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+    /* Analytics */
+
+
+    .analytics{
+
+
+        display:flex;
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .chart-card{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+    /* AI Boxes */
+
+
+    .health-box,
+    .saving-box,
+    .expense-ai-box,
+    .spending-box,
+    .ai-chat-box{
+
+
+        width:90%;
+
+
+        padding:20px;
+
+
+    }
+
+
+
+
+
+    /* Chat */
+
+
+    .chat-input{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .chat-input button{
+
+
+        width:100%;
+
+
+    }
+
+
+
+
+}
+/* =======================================
+   WELCOME DASHBOARD
+======================================= */
+
+
+.welcome-box{
+
+
+    width:90%;
+
+    max-width:900px;
+
+
+    margin:30px auto;
+
+
+    padding:35px;
+
+
+    text-align:center;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:30px;
+
+
+    color:white;
+
+
+    animation:fadeUp .8s ease;
+
+
+}
+
+
+
+.welcome-box h1{
+
+
+    font-size:40px;
+
+
+    text-shadow:0 0 20px #00e5ff;
+
+
+}
+
+
+
+.welcome-box h2{
+
+
+    color:#00e5ff;
+
+
+}
+
+
+
+.welcome-box p{
+
+
+    margin:15px;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+.date-time{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:30px;
+
+
+    margin-top:20px;
+
+
+    font-size:18px;
+
+
+}
+/* =======================================
+   PREMIUM NAVBAR
+======================================= */
+
+
+.navbar{
+
+
+    width:90%;
+
+
+    margin:20px auto;
+
+
+    padding:20px 30px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.brand{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    color:white;
+
+
+}
+
+
+
+.logo-icon{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    border-radius:18px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:#00e5ff;
+
+
+    color:black;
+
+
+    font-size:25px;
+
+
+    box-shadow:
+
+    0 0 25px #00e5ff;
+
+
+}
+
+
+
+.brand h2{
+
+
+    margin:0;
+
+
+}
+
+
+
+.brand span{
+
+
+    color:#00e5ff;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+.nav-actions{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+}
+
+
+
+.pro-badge{
+
+
+    background:#00e5ff;
+
+
+    color:black;
+
+
+    padding:8px 18px;
+
+
+    border-radius:20px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+.nav-actions button{
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border-radius:50%;
+
+
+}
+/* =======================================
+   AI REPORT BOX
+======================================= */
+
+
+.report-box{
+
+
+    width:90%;
+
+    max-width:700px;
+
+
+    margin:30px auto;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.report-box h2{
+
+
+    color:#00e5ff;
+
+
+}
+
+
+
+#generateReport{
+
+
+    margin:20px;
+
+
+    padding:15px 30px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+    background:#00e5ff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+#reportResult{
+
+
+    margin-top:20px;
+
+
+    line-height:1.8;
+
+
+}
+/* =======================================
+   AI PREDICTION BOX
+======================================= */
+
+
+.prediction-box{
+
+
+    width:90%;
+
+
+    max-width:700px;
+
+
+    margin:30px auto;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.prediction-box h2{
+
+
+    color:#00e5ff;
+
+
+}
+
+
+
+#predictBtn{
+
+
+    margin:20px;
+
+
+    padding:15px 30px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+    background:#00e5ff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+#predictionResult{
+
+
+    line-height:2;
+
+
+    font-size:18px;
+
+
+}
+/* =======================================
+   EXPENSE AI BOX
+======================================= */
+
+
+.expense-ai-box{
+
+
+    width:90%;
+
+    max-width:700px;
+
+
+    margin:30px auto;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.expense-ai-box h2{
+
+
+    color:#00e5ff;
+
+
+}
+
+
+
+#expenseAdviceBtn{
+
+
+    margin:20px;
+
+
+    padding:15px 30px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+    background:#00e5ff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+#expenseAdvice{
+
+
+    line-height:2;
+
+    font-size:17px;
+
+
+}
+/* =======================================
+   FINAL UI POLISH
+======================================= */
+
+
+/* Smooth Scroll */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+/* All Cards Hover */
+
+
+.card,
+.health-box,
+.saving-box,
+.ai-chat-box,
+.report-box,
+.prediction-box,
+.expense-ai-box,
+.welcome-box{
+
+
+    transition:.4s ease;
+
+
+}
+
+
+
+.card:hover,
+.health-box:hover,
+.saving-box:hover,
+.ai-chat-box:hover,
+.report-box:hover,
+.prediction-box:hover,
+.expense-ai-box:hover,
+.welcome-box:hover{
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,229,255,.25);
+
+
+}
+
+
+
+
+/* Buttons Premium Effect */
+
+
+button{
+
+
+    cursor:pointer;
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+button:hover{
+
+
+    transform:scale(1.05);
+
+
+    box-shadow:
+
+    0 0 20px #00e5ff;
+
+
+}
+
+
+
+
+/* Input Focus */
+
+
+input:focus,
+select:focus{
+
+
+    box-shadow:
+
+    0 0 15px #00e5ff;
+
+
+}
+
+
+
+
+
+/* Scroll Bar */
+
+
+::-webkit-scrollbar{
+
+
+    width:8px;
+
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+    border-radius:20px;
+
+
+    background:#00e5ff;
+
+
+}
